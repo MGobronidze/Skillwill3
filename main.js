@@ -67,3 +67,24 @@ const {fName, lName, age, banks:[, , {bName, address:{city={}, Country}}]} = use
 console.log(city);
 
 // მესამე დავალება
+const userObj = {
+    fName: "John",
+    lName: "Doe",
+    age: "45",
+    address:{
+        city:"Paris",
+        country: "France"
+    }
+}
+
+function copyObj(obj){
+    let copiedObj = {...obj,
+                    address: {...obj.address}
+    }
+    return copiedObj
+}
+let userCopied=copyObj(userObj);
+// test
+userCopied.address.country ="Germany";
+console.log(userObj);
+console.log(userCopied);
